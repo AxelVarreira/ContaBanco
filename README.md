@@ -1,6 +1,6 @@
 # Mini programa em java que simula uma conta de banco
 
-<p>Esse é um mini projeto que criei a partir do desafio dado pelo professor Gustavo Guanabara, na serie de videos educativos sobre POO em Java, foi muito interessante, pois consegui implementar ainda mais do que o pedido, criando varias outras features pro miniprograma</p>
+<p>Esse é um mini projeto que criei a partir do desafio dado pelo professor Gustavo Guanabara, na serie de videos educativos sobre POO em Java, foi muito interessante, pois consegui implementar ainda mais do que o pedido, criando varias outras features pro miniprograma.</p>
 
 <h4>Propostas do desafio</h4>
 <p>
