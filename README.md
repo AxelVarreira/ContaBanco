@@ -7,7 +7,7 @@
   
 **O cliente deveria iniciar com essas caracteristicas:**
   
-Conta corrente: 12 reais mensal e ganha 150 reais
+Conta corrente: 12 reais mensal e ganha 150 reais<br>
 Conta Poupança: 20 reais mensal e ganha 50 reais
 
 Constructor:
