@@ -35,6 +35,8 @@ Saldo: 0
 
 [Video base](https://www.youtube.com/watch?v=ull_DVFFOq0&list=PLHz_AreHm4dkqe2aR0tQK74m8SFe-aGsY&index=10)
 
+[![Screenshot-from-2020-07-05-15-59-03.png](https://i.postimg.cc/SsJtXtD3/Screenshot-from-2020-07-05-15-59-03.png)](https://postimg.cc/WFc7CSRw)
+
 Java **IS COOL**!
 
 
