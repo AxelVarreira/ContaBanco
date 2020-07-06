@@ -20,6 +20,7 @@ public class ContaBanco {
     private boolean status;
     public String basicAnswer;
     private Scanner input = new Scanner(System.in);
+    private int verifier;
     Double ale = Math.random();
 
     public ContaBanco() {
@@ -41,9 +42,7 @@ public class ContaBanco {
         return dono;
     }
 
-    public float getSaldo() {
-        return saldo;
-    }
+    public float getSaldo() { return saldo; }
 
     public boolean getStatus() {
         return status;
@@ -73,34 +72,37 @@ public class ContaBanco {
     //METODOS FUNCIONAIS
     //FUNCTIONS
     public void openAccount() {
-        if (getStatus() != true) {
-            this.status = true;
+        //abre a conta com todas as informacoes
+        if (this.getStatus() != true) {
+            this.setStatus(true);
             System.out.println("Digite o seu nome: ");
-            setDono(input.nextLine());
-            setNumConta(1000+ale*(2000-1000));
+            this.setDono(input.nextLine());
+            this.setNumConta(1000+ale*(2000-1000));
             System.out.println("Qual tipo de conta o senhor deseja? Conta corrente (cC)/ Conta Poupanca(cP))");
-            tipo = input.nextLine();
+            setTipo(input.nextLine());
             if ("cC".equals(tipo)) {
-                setSaldo(150);
+                this.setSaldo(150);
+                verifier = 1;
             } else {
-                setSaldo(50);
+                this.setSaldo(50);
+                verifier = 2;
             }
             System.out.println("Conta aberta com sucesso!");
         } else {
             System.out.println("\nConta já aberta!\n");
         }
-        System.out.println(getSaldo());
+        System.out.println(this.getSaldo());
     }
 
     public void closeAccount() {
         if (getStatus() != false) {
             //Eu poderia tirar o operador logico, porém, ia ter que inverter os blocos de codigo, creio eu
-            if (getSaldo() > 0) {
+            if (this.getSaldo() > 0) {
                 System.out.println("O senhor deseja sacar o dinheiro em sua conta?(y)(n)");
                 basicAnswer = input.nextLine();
                 if ("y".equals(basicAnswer)) {
-                    verSaldo();
-                    sacar();
+                    this.verSaldo();
+                    this.sacar();
                 } else {
                     System.out.println("Fechando conta!");
                 }
@@ -109,7 +111,7 @@ public class ContaBanco {
                         "área de depósito senhor? (y)(n)");
                 basicAnswer = input.nextLine();
                 if ("y".equals(basicAnswer)) {
-                    depositar();
+                    this.depositar();
                 } else {
                     System.out.println("Voltando ao menu...");
                 }
@@ -123,27 +125,27 @@ public class ContaBanco {
     }
 
         public void depositar() {
-            if(getStatus()){
+            if(this.getStatus()){
                 System.out.println("Digite o valor que quer depositar: ");
                 float deposito = input.nextFloat();
-                setSaldo(saldo + deposito);
-                verSaldo();
+                this.setSaldo(saldo + deposito);
+                this.verSaldo();
             }else{
                 System.out.println("Conta inexistente!");
             }
         }
 
         public void sacar() {
-            if(getStatus()){
+            if(this.getStatus()){
                 System.out.println("Digite o valor que quer sacar: ");
                 float saque = input.nextFloat();
-                if (saque <= getSaldo()) {
+                if (saque <= this.getSaldo()) {
                     System.out.println("Sacado com sucesso!");
-                    setSaldo(saldo - saque);
+                    this.setSaldo(saldo - saque);
                 } else {
                     System.out.println("Valor para saque indisponivel!");
                 }
-                verSaldo();
+                this.verSaldo();
             }else{
                 System.out.println("Conta inexistente!");
             }
@@ -151,36 +153,36 @@ public class ContaBanco {
 
         public void pagarMensal() {
             if ("cC".equals(tipo)) {
-                if (getSaldo() > 12) {
+                if (this.getSaldo() > 12) {
                     System.out.println("Mensalidade paga com sucesso!");
-                    setSaldo(saldo - 12);
+                    this.setSaldo(saldo - 12);
                 } else {
                     System.out.println("Saldo insuficiente!");
                 }
             } else if ("cP".equals(tipo)) {
-                if (getSaldo() > 20) {
+                if (this.getSaldo() > 20) {
                     System.out.println("Mensalidade paga com sucesso!");
-                    setSaldo(saldo - 20);
+                    this.setSaldo(saldo - 20);
                 } else {
                     System.out.println("Saldo insuficiente!");
                 }
             }
 
-            verSaldo();
+            this.verSaldo();
         }
-
+        //by https://github.com/AxelVarreira
         public void verSaldo() {
-            if(getStatus()){
-                System.out.println("Seu saldo atual é: " +getSaldo());
+            if(this.getStatus()){
+                System.out.println("Seu saldo atual é: " +this.getSaldo());
             }else{
                 System.out.println("Conta inexistente!");
             }
         }
         public void status(){
-            System.out.println("\nNome: "+getDono());
-            System.out.println("Numero da conta: "+getNumConta());
-            System.out.println("Saldo: "+getSaldo());
-            if(getStatus()){
+            System.out.println("\nNome: "+this.getDono());
+            System.out.println("Numero da conta: "+this.getNumConta());
+            System.out.println("Saldo: "+this.getSaldo());
+            if(this.getStatus()){
                 System.out.println("Status: Ativo");
             }else{
                 System.out.println("Status: Desativado/Inexistente");
