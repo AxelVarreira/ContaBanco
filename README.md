@@ -33,7 +33,7 @@ Saldo: 0
 
 <p>This is a mini project made by me from a challenge gave by the professor Gustavo Guanabara, in his youtube educative series about Oriented object programming, went to intersting, because i could improve yet more thant his request, making alot of new features for the mini program.</p>
 
-[Video base](https://www.youtube.com/watch?v=6i-_R5cAcEc&list=PLHz_AreHm4dkqe2aR0tQK74m8SFe-aGsY&index=9)
+[Video base](https://www.youtube.com/watch?v=ull_DVFFOq0&list=PLHz_AreHm4dkqe2aR0tQK74m8SFe-aGsY&index=10)
 
 Java **IS COOL**!
 
