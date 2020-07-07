@@ -128,7 +128,7 @@ public class ContaBanco {
             if(this.getStatus()){
                 System.out.println("Digite o valor que quer depositar: ");
                 float deposito = input.nextFloat();
-                this.setSaldo(saldo + deposito);
+                this.setSaldo(this.getSaldo()+deposito);
                 this.verSaldo();
             }else{
                 System.out.println("Conta inexistente!");
@@ -141,7 +141,7 @@ public class ContaBanco {
                 float saque = input.nextFloat();
                 if (saque <= this.getSaldo()) {
                     System.out.println("Sacado com sucesso!");
-                    this.setSaldo(saldo - saque);
+                    this.setSaldo(this.getSaldo() - saque);
                 } else {
                     System.out.println("Valor para saque indisponivel!");
                 }
@@ -155,14 +155,14 @@ public class ContaBanco {
             if ("cC".equals(tipo)) {
                 if (this.getSaldo() > 12) {
                     System.out.println("Mensalidade paga com sucesso!");
-                    this.setSaldo(saldo - 12);
+                    this.setSaldo(this.getSaldo() - 12);
                 } else {
                     System.out.println("Saldo insuficiente!");
                 }
             } else if ("cP".equals(tipo)) {
                 if (this.getSaldo() > 20) {
                     System.out.println("Mensalidade paga com sucesso!");
-                    this.setSaldo(saldo - 20);
+                    this.setSaldo(this.getSaldo() - 20);
                 } else {
                     System.out.println("Saldo insuficiente!");
                 }
@@ -187,6 +187,6 @@ public class ContaBanco {
             }else{
                 System.out.println("Status: Desativado/Inexistente");
             }
-            System.out.println("Tipo:"+getTipo()+"\n");
+            System.out.println("Tipo:"+this.getTipo()+"\n");
         }
 }
